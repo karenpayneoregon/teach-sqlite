@@ -1,4 +1,5 @@
 using System.ComponentModel;
+using FluentValidation.Results;
 using SampleApp1.Validators;
 using SampleApp2.Classes;
 using SampleApp2.Models;
@@ -73,16 +74,18 @@ public partial class Form1 : Form
 
     private void ContactTitleComboBox_SelectedIndexChanged(object? sender, EventArgs e)
     {
-        ContactContainer contact = (ContactContainer)ContactNamesListBox.SelectedItem!;
-        var contactType = (ContactType)ContactTitleComboBox.SelectedItem!;
-        contact.ContactTypeIdentifier = contactType.ContactTypeIdentifier;
+
+        ContactContainer contactContainer = _contactsBindingList[_contactsBindingSource.Position];
+
+        ContactType contactType = (ContactType)ContactTitleComboBox.SelectedItem!;
+        contactContainer.ContactTypeIdentifier = contactType.ContactTypeIdentifier;
 
         ContactContainerValidator validator = new();
-        var result = validator.Validate(contact);
+        ValidationResult? result = validator.Validate(contactContainer);
 
         if (result.IsValid)
         {
-            EntityOperations.UpdateContact(contact);
+            EntityOperations.UpdateContact(contactContainer);
         }
 
     }
@@ -94,7 +97,7 @@ public partial class Form1 : Form
             ContactContainer contact = _contactsBindingList[e.NewIndex];
 
             ContactContainerValidator validator = new();
-            var result = validator.Validate(contact);
+            ValidationResult? result = validator.Validate(contact);
             if (result.IsValid)
             {
                 EntityOperations.UpdateContact(contact);
@@ -109,12 +112,12 @@ public partial class Form1 : Form
 
     private void SelectionChanged()
     {
-        var contact = (ContactContainer)ContactNamesListBox.SelectedItem!;
+        ContactContainer contactContainer = _contactsBindingList[_contactsBindingSource.Position];
 
-        if (contact is not null)
+        if (contactContainer is not null)
         {
             var contactType = _contactTypesBindingList.FirstOrDefault(
-                x => x.ContactTypeIdentifier == contact.ContactTypeIdentifier);
+                x => x.ContactTypeIdentifier == contactContainer.ContactTypeIdentifier);
 
             ContactTitleComboBox.SelectedItem = contactType;
         }
