@@ -77,7 +77,7 @@ public partial class Form1 : Form
 
         ContactContainer contactContainer = _contactsBindingList[_contactsBindingSource.Position];
 
-        ContactType contactType = (ContactType)ContactTitleComboBox.SelectedItem!;
+        var contactType = _contactTypesBindingList[ContactTitleComboBox.SelectedIndex];
         contactContainer.ContactTypeIdentifier = contactType.ContactTypeIdentifier;
 
         ContactContainerValidator validator = new();
