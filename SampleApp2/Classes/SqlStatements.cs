@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SampleApp2.Classes;
+﻿namespace SampleApp2.Classes;
 public class SqlStatements
 {
     public static string GetPartialContact =>

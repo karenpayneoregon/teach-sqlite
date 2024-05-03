@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SampleApp1": {
+      "commandName": "Project",
+      "executablePath": "C:\\FastEnterprises\\OUD\\FastCore\\Components\\gtGen.exe"
+    }
+  }
+}

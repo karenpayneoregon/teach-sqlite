@@ -1,0 +1,9 @@
+﻿{
+	"profiles": {
+		"WinesApp": {
+			"commandName": "Project",
+			"executablePath": "C:\\FastEnterprises\\OUD\\FastCore\\Components\\gtGen.exe",
+			"workingDirectory": "C:\\FastEnterprises\\OUD\\FastCore\\Components"
+		}
+	}
+}

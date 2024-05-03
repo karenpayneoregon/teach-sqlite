@@ -1,4 +1,4 @@
-﻿namespace SqlServerTableRulesApp.Extensions;
+﻿namespace SampleApp1.Classes;
 public static class DataGridViewExtensions
 {
     public static void ExpandColumns(this DataGridView source, bool sizable = false)

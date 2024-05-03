@@ -62,6 +62,23 @@ internal class SqlStatements
         FROM dbo.Contacts;
         """;
 
+    /// <summary>
+    /// Find contact by last name
+    /// </summary>
+    /// <param name="casing">true for case-insensitive</param>
+    /// <returns></returns>
+    /// <remarks>
+    /// Useful only when a column is not set to case-insensitive
+    /// </remarks>
+    public static string ContactByLastName(bool casing) =>
+        $"""
+          SELECT ContactId,
+                 ContactTypeIdentifier
+          FROM Contacts
+          WHERE LastName = @LastName {(casing ? "COLLATE NOCASE" : "")};
+          """;
+
+
     public static string UpdateContact =>
         """
         UPDATE Contacts

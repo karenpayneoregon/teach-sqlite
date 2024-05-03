@@ -1,6 +1,5 @@
 using SampleApp1.Classes;
 using SampleApp1.Models;
-using SqlServerTableRulesApp.Extensions;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
@@ -13,7 +12,7 @@ namespace SampleApp1;
 
 public partial class Form1 : Form
 {
-    private SortableBindingList<Contact> _contactsBindingList;
+    private BindingListView<Contact> _contactsBindingList;
 
     private BindingSource _contactsBindingSource = new();
     private BindingSource _contactTypeComboBoxBindingSource = new();
@@ -35,8 +34,10 @@ public partial class Form1 : Form
         try
         {
             // main data for the DataGridView
-            _contactsBindingList = new SortableBindingList<Contact>(DapperOperations.Contacts());
+            _contactsBindingList = new BindingListView<Contact>(DapperOperations.Contacts());
             _contactsBindingSource.DataSource = _contactsBindingList;
+
+            var test = _contactsBindingSource.SupportsFiltering;
 
             // data for the ContactTypeComboBoxColumn which is ContactType
             _contactTypeComboBoxBindingSource.DataSource = DapperOperations.ContactTypes();
@@ -80,7 +81,7 @@ public partial class Form1 : Form
 
     private void AboutItemButton_Click(object? sender, EventArgs e)
     {
-        Information(this,"About","SQLite code sample");
+        Information(this, "About", "SQLite code sample");
     }
 
     /// <summary>
@@ -200,7 +201,7 @@ public partial class Form1 : Form
 
         Contact contact = new()
         {
-            
+
             ContactTypeIdentifier = fake.ContactTypeIdentifier,
             FirstName = fake.FirstName,
             LastName = fake.LastName,
@@ -221,5 +222,28 @@ public partial class Form1 : Form
         _contactsBindingSource.Sort = "LastName";
         var index = _contactsBindingSource.List.IndexOf(contact);
         _contactsBindingSource.Position = index;
+
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+
+
+        if (string.IsNullOrWhiteSpace(firstNameTextBox.Text))
+        {
+            _contactsBindingSource.RemoveFilter();
+        }
+        else
+        {
+            _contactsBindingSource.Filter = $"FirstName = '{firstNameTextBox.Text}'";
+        }
+
+    }
+
+    private void button2_Click(object sender, EventArgs e)
+    {
+        var contact = DapperOperations.GetContactByLastName("anders");
+
+        var test = SqlStatements.ContactByLastName(true);
     }
 }

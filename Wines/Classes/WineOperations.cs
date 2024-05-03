@@ -50,7 +50,9 @@ public class WineOperations
         }
 
         List<Wine> allWines = [.. context.Wines];
-        
+
+        var container = Helpers.RangeDetails(allWines);
+
         LineSeparator("[white]All[/]");
 
         foreach (var wine in allWines)
@@ -83,6 +85,8 @@ public class WineOperations
         {
             Console.WriteLine($"{wine.Name,30}");
         }
+
+        
 
     }
 }

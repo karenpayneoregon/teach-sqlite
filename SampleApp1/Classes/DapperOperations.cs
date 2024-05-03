@@ -77,4 +77,9 @@ internal class DapperOperations
         
     }
 
+    public static Contact GetContactByLastName(string lastName)
+    {
+        using var cn = new SQLiteConnection(ConnectionString());
+        return cn.QueryFirstOrDefault<Contact>(SqlStatements.ContactByLastName(false), new { LastName = lastName })!;
+    }
 }
