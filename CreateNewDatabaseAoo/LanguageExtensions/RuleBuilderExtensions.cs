@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace CreateNewDatabaseAoo.LanguageExtensions;
+namespace CreateNewDatabaseApp.LanguageExtensions;
 
 
 public static class RuleBuilderExtensions

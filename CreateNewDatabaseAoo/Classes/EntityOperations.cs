@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CreateNewDatabaseAoo.Data;
+﻿using CreateNewDatabaseApp.Data;
+using CreateNewDatabaseApp.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace CreateNewDatabaseAoo.Classes;
+namespace CreateNewDatabaseApp.Classes;
 internal class EntityOperations
 {
     public static void CreateDatabaseAddDataShowData()
@@ -18,7 +14,7 @@ internal class EntityOperations
 
         AnsiConsole.MarkupLine("[yellow]EF Core[/] [green]Database and Table created successfully[/]");
 
-        var people = new List<Models.Person>
+        var people = new List<Person>
         {
             new() { FirstName = "John", LastName = "Doe", Pin = 1234, BirthDate = new DateOnly(2021,1,1)},
             new() { FirstName = "Jane", LastName = "Doe", Pin = 5678, BirthDate = new DateOnly(2022,1,1) },

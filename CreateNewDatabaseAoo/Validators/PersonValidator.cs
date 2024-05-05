@@ -1,9 +1,9 @@
 ﻿#nullable disable
-using CreateNewDatabaseAoo.DapperModels;
-using CreateNewDatabaseAoo.LanguageExtensions;
+using CreateNewDatabaseApp.DapperModels;
+using CreateNewDatabaseApp.LanguageExtensions;
 using FluentValidation;
 
-namespace CreateNewDatabaseAoo.Validators;
+namespace CreateNewDatabaseApp.Validators;
 
 public class PersonValidator : AbstractValidator<Person>
 {

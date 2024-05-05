@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace CreateNewDatabaseAoo.EntityExtensions;
+namespace CreateNewDatabaseApp.EntityExtensions;
 
     public static class ContextExtensions
     {

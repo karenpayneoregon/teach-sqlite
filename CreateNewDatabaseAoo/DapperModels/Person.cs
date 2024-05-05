@@ -1,6 +1,6 @@
-﻿using CreateNewDatabaseAoo.Interfaces;
+﻿using CreateNewDatabaseApp.Interfaces;
 
-namespace CreateNewDatabaseAoo.DapperModels;
+namespace CreateNewDatabaseApp.DapperModels;
 
 /// <summary>
 /// For Dapper work

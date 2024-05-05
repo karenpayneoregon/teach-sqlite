@@ -1,9 +1,7 @@
-﻿
-using CreateNewDatabaseAoo.Interfaces;
+﻿using CreateNewDatabaseApp.Interfaces;
 using FluentValidation;
 
-
-namespace CreateNewDatabaseAoo.Validators;
+namespace CreateNewDatabaseApp.Validators;
 
 public class FirstLastNameValidator : AbstractValidator<IPerson>
 {

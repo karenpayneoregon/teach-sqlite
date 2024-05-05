@@ -1,13 +1,12 @@
 ﻿using System.Data.SQLite;
-using CreateNewDatabaseAoo.DapperModels;
-using CreateNewDatabaseAoo.Handlers;
-using CreateNewDatabaseAoo.LanguageExtensions;
-using CreateNewDatabaseAoo.Validators;
+using CreateNewDatabaseApp.DapperModels;
+using CreateNewDatabaseApp.Handlers;
+using CreateNewDatabaseApp.LanguageExtensions;
+using CreateNewDatabaseApp.Validators;
 using Dapper;
 using FluentValidation.Results;
 
-
-namespace CreateNewDatabaseAoo.Classes;
+namespace CreateNewDatabaseApp.Classes;
 
 /// <summary>
 /// Code creates a new database on each run.

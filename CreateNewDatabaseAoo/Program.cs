@@ -1,7 +1,6 @@
-﻿using CreateNewDatabaseAoo.Classes;
-using CreateNewDatabaseAoo.DapperModels;
+﻿using CreateNewDatabaseApp.Classes;
 
-namespace CreateNewDatabaseAoo;
+namespace CreateNewDatabaseApp;
 
 internal partial class Program
 {

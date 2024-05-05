@@ -1,4 +1,4 @@
-﻿namespace CreateNewDatabaseAoo.Interfaces;
+﻿namespace CreateNewDatabaseApp.Interfaces;
 
 /// <summary>
 /// For validation rules for first and last name

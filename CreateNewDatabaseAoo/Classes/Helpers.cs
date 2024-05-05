@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace CreateNewDatabaseAoo.Classes;
+namespace CreateNewDatabaseApp.Classes;
 
 public static class Helpers
 {

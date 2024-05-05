@@ -1,7 +1,7 @@
 ﻿using System.Data;
 using Dapper;
 
-namespace CreateNewDatabaseAoo.Handlers;
+namespace CreateNewDatabaseApp.Handlers;
 
 public class DateOnlyTypeHandler : SqlMapper.TypeHandler<DateOnly>
 {

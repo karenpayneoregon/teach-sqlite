@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace ValidateBirthDateApp.LanguageExtensions;
+namespace CreateNewDatabaseApp.LanguageExtensions;
 public static partial class StringExtensions
 {
     /// <summary>
