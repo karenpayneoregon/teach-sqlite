@@ -25,9 +25,12 @@ public partial class Form1 : Form
         InitializeComponent();
 
         Shown += Form1_Shown;
+
+        PeekOperation.RevealCommandText();
+
     }
 
-    private async void Form1_Shown(object? sender, EventArgs e)
+private async void Form1_Shown(object? sender, EventArgs e)
     {
 
         await ReadDataFromDatabase();

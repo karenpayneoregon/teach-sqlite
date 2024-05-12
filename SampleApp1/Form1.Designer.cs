@@ -36,12 +36,12 @@ partial class Form1
         PhoneColumn = new DataGridViewTextBoxColumn();
         DeviceTypeColumn = new DataGridViewTextBoxColumn();
         panel1 = new Panel();
+        button2 = new Button();
         button1 = new Button();
         firstNameTextBox = new TextBox();
         MockAddContactButton = new Button();
         CurrentContactButton = new Button();
         BindingNavigator1 = new Classes.CoreBindingNavigator();
-        button2 = new Button();
         ((System.ComponentModel.ISupportInitialize)contactsDataGridView).BeginInit();
         panel1.SuspendLayout();
         BindingNavigator1.BeginInit();
@@ -57,7 +57,7 @@ partial class Form1
         contactsDataGridView.Location = new Point(0, 27);
         contactsDataGridView.Name = "contactsDataGridView";
         contactsDataGridView.RowHeadersWidth = 51;
-        contactsDataGridView.Size = new Size(800, 358);
+        contactsDataGridView.Size = new Size(800, 426);
         contactsDataGridView.TabIndex = 0;
         // 
         // ContactTypeComboBoxColumn
@@ -112,16 +112,26 @@ partial class Form1
         panel1.Controls.Add(MockAddContactButton);
         panel1.Controls.Add(CurrentContactButton);
         panel1.Dock = DockStyle.Bottom;
-        panel1.Location = new Point(0, 385);
+        panel1.Location = new Point(0, 453);
         panel1.Name = "panel1";
-        panel1.Size = new Size(800, 65);
+        panel1.Size = new Size(800, 115);
         panel1.TabIndex = 1;
+        // 
+        // button2
+        // 
+        button2.Location = new Point(680, 14);
+        button2.Name = "button2";
+        button2.Size = new Size(94, 29);
+        button2.TabIndex = 3;
+        button2.Text = "button2";
+        button2.UseVisualStyleBackColor = true;
+        button2.Click += button2_Click;
         // 
         // button1
         // 
-        button1.Location = new Point(568, 16);
+        button1.Location = new Point(214, 63);
         button1.Name = "button1";
-        button1.Size = new Size(94, 29);
+        button1.Size = new Size(181, 29);
         button1.TabIndex = 3;
         button1.Text = "button1";
         button1.UseVisualStyleBackColor = true;
@@ -129,9 +139,9 @@ partial class Form1
         // 
         // firstNameTextBox
         // 
-        firstNameTextBox.Location = new Point(437, 16);
+        firstNameTextBox.Location = new Point(12, 65);
         firstNameTextBox.Name = "firstNameTextBox";
-        firstNameTextBox.Size = new Size(125, 27);
+        firstNameTextBox.Size = new Size(181, 27);
         firstNameTextBox.TabIndex = 2;
         firstNameTextBox.Text = "Maria";
         // 
@@ -169,21 +179,11 @@ partial class Form1
         BindingNavigator1.TabIndex = 2;
         BindingNavigator1.Text = "coreBindingNavigator1";
         // 
-        // button2
-        // 
-        button2.Location = new Point(680, 14);
-        button2.Name = "button2";
-        button2.Size = new Size(94, 29);
-        button2.TabIndex = 3;
-        button2.Text = "button2";
-        button2.UseVisualStyleBackColor = true;
-        button2.Click += button2_Click;
-        // 
         // Form1
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(800, 450);
+        ClientSize = new Size(800, 568);
         Controls.Add(contactsDataGridView);
         Controls.Add(BindingNavigator1);
         Controls.Add(panel1);

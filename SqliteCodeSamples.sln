@@ -21,8 +21,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Class projects", "Class pro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PayneLibrary", "PayneLibrary\PayneLibrary.csproj", "{9304695D-800E-4681-BACA-E06901C53940}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project1", "Project1\Project1.csproj", "{F50CC3DC-3196-4DDE-8396-54D62A1E2C72}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,10 +47,6 @@ Global
 		{9304695D-800E-4681-BACA-E06901C53940}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9304695D-800E-4681-BACA-E06901C53940}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9304695D-800E-4681-BACA-E06901C53940}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F50CC3DC-3196-4DDE-8396-54D62A1E2C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F50CC3DC-3196-4DDE-8396-54D62A1E2C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F50CC3DC-3196-4DDE-8396-54D62A1E2C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F50CC3DC-3196-4DDE-8396-54D62A1E2C72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
