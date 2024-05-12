@@ -37,7 +37,7 @@ public partial class Form1 : Form
             _contactsBindingList = new BindingListView<Contact>(DapperOperations.Contacts());
             _contactsBindingSource.DataSource = _contactsBindingList;
 
-            var test = _contactsBindingSource.SupportsFiltering;
+
 
             // data for the ContactTypeComboBoxColumn which is ContactType
             _contactTypeComboBoxBindingSource.DataSource = DapperOperations.ContactTypes();
