@@ -1,6 +1,6 @@
 ﻿# About
 
-An example to show how to backup and SQLite database.
+An example to show how to backup a SQLite database.
 
 On first build a folder named Backups is creating from the following in this project file.
 
