@@ -4,7 +4,7 @@ For teaching working with SQLite using
 - EF Core
 - Dapper
 
-More to follow
+More to follow in a Dev.io article.
 
 ## Stored Procedures
 
