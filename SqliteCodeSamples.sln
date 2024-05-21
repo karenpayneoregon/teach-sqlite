@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BindingListViewCore", "Bind
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleApp3", "SampleApp3\SampleApp3.csproj", "{7E6836FB-2C77-462B-829C-BD2445114A36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackupDatabaseSampleApp", "BackupDatabaseSampleApp\BackupDatabaseSampleApp.csproj", "{578C3963-B11F-4797-AF4D-D9D943F2E8C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackupDatabaseSampleApp", "BackupDatabaseSampleApp\BackupDatabaseSampleApp.csproj", "{578C3963-B11F-4797-AF4D-D9D943F2E8C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

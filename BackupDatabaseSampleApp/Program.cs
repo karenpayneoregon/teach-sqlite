@@ -2,6 +2,7 @@
 using BackupDatabaseSampleApp.Classes;
 using BackupDatabaseSampleApp.Models;
 using Dapper;
+using Serilog;
 
 namespace BackupDatabaseSampleApp;
 
@@ -12,6 +13,7 @@ internal partial class Program
     
     static void Main(string[] args)
     {
+        Log.Information("Backing up database");
 
         var list = Contacts();
 
@@ -34,6 +36,8 @@ internal partial class Program
         {
             AnsiConsole.WriteException(exception);
         }
+
+        Log.Information("Done");
 
         SpectreConsoleHelpers.ExitPrompt();
     }

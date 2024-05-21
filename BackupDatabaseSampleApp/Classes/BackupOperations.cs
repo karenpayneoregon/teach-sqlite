@@ -1,4 +1,5 @@
 ﻿using System.Data.SQLite;
+using Serilog;
 
 namespace BackupDatabaseSampleApp.Classes;
 public static class BackupOperations
@@ -16,11 +17,12 @@ public static class BackupOperations
             var backup = new SQLiteConnection($"Data Source={_backupDatabaseName}");
             using var cn = new SQLiteConnection(BackupSettings.Instance.ConnectionString);
             cn.BackupDatabase(backup);
-
+            Log.Information("Backup successful");
             return (true, null);
         }
         catch (Exception ex)
         {
+            Log.Error(ex, "Backup failed");
             return (false, ex);
         }
     }

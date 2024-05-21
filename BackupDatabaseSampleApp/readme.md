@@ -1,6 +1,8 @@
 ﻿# About
 
-An example to show how to backup a SQLite database.
+An example to show how to [backup](https://learn.microsoft.com/en-us/dotnet/standard/data/sqlite/backup) a SQLite database.
+
+SeriLog logs success and failures to a log file.
 
 On first build a folder named Backups is creating from the following in this project file.
 
