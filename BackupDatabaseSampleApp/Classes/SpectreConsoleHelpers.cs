@@ -3,6 +3,9 @@ using Spectre.Console;
 
 namespace BackupDatabaseSampleApp.Classes;
 
+/// <summary>
+/// Helper methods for screen operations using Spectre.Console NuGet package
+/// </summary>
 public static class SpectreConsoleHelpers
 {
     public static void ExitPrompt()

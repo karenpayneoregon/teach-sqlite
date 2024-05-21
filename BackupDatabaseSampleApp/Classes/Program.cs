@@ -12,6 +12,9 @@ internal partial class Program
         Console.Title = "Backup database code sample";
         WindowUtility.SetConsoleWindowPosition(WindowUtility.AnchorWindow.Center);
 
+        /*
+         * Setup logging using SeriLog which creates a new folder/file per day
+         */
         Log.Logger = new LoggerConfiguration()
             .MinimumLevel.Verbose()
             .WriteTo.File(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "LogFiles", $"{DateTime.Now.Year}-{DateTime.Now.Month}-{DateTime.Now.Day}", "Log.txt"),

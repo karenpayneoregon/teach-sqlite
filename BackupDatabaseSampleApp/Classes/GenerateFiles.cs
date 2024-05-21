@@ -2,11 +2,18 @@
 
 namespace BackupDatabaseSampleApp.Classes
 {
+    /// <summary>
+    /// Provides methods for generating files which are incremented e.g. File1.db, File2.db, File3.db
+    /// </summary>
+    /// <remarks>
+    /// Note that the file name is based on the base file name and extension in <see cref="BackupSettings"/>
+    /// which is set in appsettings.json
+    /// </remarks>
     public class GenerateFiles
     {
 
         /// <summary>
-        /// Pattern for base file name incrementing together with <see cref="_baseFileName"/>
+        /// Pattern for base file name incrementing together 
         /// </summary>
         private static readonly string _pattern = "_{0}";
 
@@ -36,7 +43,7 @@ namespace BackupDatabaseSampleApp.Classes
 
             return Path.HasExtension(path) ?
                 GetNextFilename(path.Insert(path.LastIndexOf(Path.GetExtension(path), StringComparison.Ordinal), _pattern)) :
-                GetNextFilename(path + _pattern);
+                GetNextFilename($"{path}{_pattern}");
 
         }
         /// <summary>
