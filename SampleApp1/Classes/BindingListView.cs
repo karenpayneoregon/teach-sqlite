@@ -159,6 +159,10 @@ public class BindingListView<T> : BindingList<T>, IBindingListView, IRaiseItemCh
         }
 
         int equalsPos = _filterString.IndexOf('=');
+        if (equalsPos == -1)
+        {
+            return;
+        }
 
         // Get property name
         string propName = _filterString.Substring(0, equalsPos).Trim();

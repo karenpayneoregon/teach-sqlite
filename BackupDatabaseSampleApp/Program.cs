@@ -10,8 +10,8 @@ internal partial class Program
 {
     private static string _name = "NorthWindContacts.db";
     private static string ConnectionString() => $"Data Source={_name}";
-    
-    static void Main(string[] args)
+
+    private static void Main()
     {
         Log.Information("Backing up database");
 

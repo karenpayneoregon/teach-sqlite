@@ -23,7 +23,7 @@ public partial class Context : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         => optionsBuilder
-            .UseSqlite("Data Source=ExampleDapper2.db;Pooling=False;")
+            .UseSqlite($"Data Source={Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ExampleDapper2.db")};Pooling=False;")
             .EnableSensitiveDataLogging()
             .LogTo(message => Debug.WriteLine(message), LogLevel.Information);
 

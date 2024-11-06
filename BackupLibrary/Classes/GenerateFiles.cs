@@ -1,6 +1,6 @@
 ﻿using static System.IO.File;
 
-namespace BackupDatabaseSampleApp.Classes
+namespace BackupLibrary.Classes
 {
     /// <summary>
     /// Provides methods for generating files which are incremented e.g. File1.db, File2.db, File3.db
@@ -101,7 +101,7 @@ namespace BackupDatabaseSampleApp.Classes
             }
             catch (Exception)
             {
-                return (false, null);
+                return (false, null)!;
             }
         }
         /// <summary>
@@ -132,7 +132,7 @@ namespace BackupDatabaseSampleApp.Classes
                     Number = Convert.ToInt32(GetNumbers(Path.GetFileName(file)))
                 }).MaxBy(x => x.Number);
 
-            return result?.Name;
+            return result?.Name!;
         }
 
         /// <summary>

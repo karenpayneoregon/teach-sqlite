@@ -67,7 +67,7 @@ internal class DapperOperations
     /// <param name="devices"></param>
     public static void AddContact(Contact contact, ContactDevices devices)
     {
-        using var cn = new SQLiteConnection(ConnectionString());
+        using SQLiteConnection cn = new(ConnectionString());
 
         contact.ContactId = cn.ExecuteScalar(SqlStatements.AddContact, contact)!.GetId();
         devices.ContactId = contact.ContactId;
@@ -75,6 +75,18 @@ internal class DapperOperations
         contact.PhoneNumber = devices.PhoneNumber;
         contact.PhoneTypeIdenitfier = devices.PhoneTypeIdentifier;
         
+    }
+
+    public static async Task AddContactAsync(Contact contact, ContactDevices devices)
+    {
+        await using SQLiteConnection cn = new(ConnectionString());
+
+        contact.ContactId = (await cn.ExecuteScalarAsync(SqlStatements.AddContact, contact))!.GetId();
+        devices.ContactId = contact.ContactId;
+        devices.id = (await cn.ExecuteScalarAsync(SqlStatements.AddDevice, devices))!.GetId();
+        contact.PhoneNumber = devices.PhoneNumber;
+        contact.PhoneTypeIdenitfier = devices.PhoneTypeIdentifier;
+
     }
 
     public static Contact GetContactByLastName(string lastName)

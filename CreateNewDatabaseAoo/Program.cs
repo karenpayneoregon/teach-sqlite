@@ -6,7 +6,7 @@ internal partial class Program
 {
     static void Main(string[] args)
     {
-        //DapperOperations.CreateDatabaseAddDataShowData();
+        DapperOperations.CreateDatabaseAddDataShowData();
         EntityOperations.CreateDatabaseAddDataShowData();
 
 

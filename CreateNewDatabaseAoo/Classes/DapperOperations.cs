@@ -1,4 +1,5 @@
-﻿using System.Data.SQLite;
+﻿using System.Data;
+using System.Data.SQLite;
 using CreateNewDatabaseApp.DapperModels;
 using CreateNewDatabaseApp.Handlers;
 using CreateNewDatabaseApp.LanguageExtensions;
@@ -14,7 +15,8 @@ namespace CreateNewDatabaseApp.Classes;
 /// </summary>
 public class DapperOperations
 {
-    private static string _name = "ExampleDapper1.db";
+    //"ExampleDapper1.db"
+    private static string _name = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "ExampleDapper1.db");
     private static string ConnectionString()
         => $"Data Source={_name}";
 
@@ -23,18 +25,15 @@ public class DapperOperations
 
         SqlMapper.AddTypeHandler(new DateOnlyTypeHandler());
         
+        using SQLiteConnection cn = new(ConnectionString());
 
         /*
          * Allows the database to be recreated each time the application is run
          * which allows a developer to experiment with the database structure
          */
-        if (File.Exists(_name))
-        {
-            File.Delete(_name);
-        }
+        cn.EnsureDeleted();
 
-        using SQLiteConnection cn = new(ConnectionString());
-        
+
         /*
          * 1. Once Dapper opens the connection the database is created
          * 2. The Person table is created with the following columns: Id, FirstName, LastName, FullName, Pin
@@ -75,6 +74,7 @@ public class DapperOperations
         ViewRecords();
         ViewWhereCaseInsensitiveWithDapper();
         cn.Close();
+
     }
 
     private static void AddRecords()

@@ -1,7 +1,7 @@
 ﻿using System.Data.SQLite;
 using Serilog;
 
-namespace BackupDatabaseSampleApp.Classes;
+namespace BackupLibrary.Classes;
 public static class BackupOperations
 {
     /// <summary>
@@ -26,7 +26,7 @@ public static class BackupOperations
             cn.BackupDatabase(backup);
 
             Log.Information("Backup successful");
-            return (true, null);
+            return (true, null)!;
         }
         catch (Exception ex)
         {

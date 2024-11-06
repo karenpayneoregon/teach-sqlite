@@ -1,7 +1,9 @@
-﻿namespace CreateNewDatabaseApp.LanguageExtensions;
+﻿
+namespace CreateNewDatabaseApp.LanguageExtensions;
 public static class GeneralExtensions
 {
     public static int GetId(this object sender) 
         => (int)(long)sender;
+
 }
 

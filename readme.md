@@ -6,6 +6,8 @@ For teaching working with [SQLite](https://learn.microsoft.com/en-us/dotnet/stan
 
 More to follow in a Dev.io article.
 
+[Appropriate Uses For SQLite](https://www.sqlite.org/whentouse.html)
+
 ## Stored Procedures
 
 - [Basics](https://github.com/aergoio/sqlite-stored-procedures)

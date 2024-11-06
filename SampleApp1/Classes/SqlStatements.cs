@@ -73,7 +73,8 @@ internal class SqlStatements
     public static string ContactByLastName(bool casing) =>
         $"""
           SELECT ContactId,
-                 ContactTypeIdentifier
+                 ContactTypeIdentifier,
+                 FirstName
           FROM Contacts
           WHERE LastName = @LastName {(casing ? "COLLATE NOCASE" : "")};
           """;

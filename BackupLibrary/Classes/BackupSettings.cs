@@ -1,7 +1,7 @@
 ﻿using ConsoleConfigurationLibrary.Classes;
 using Microsoft.Extensions.Configuration;
 
-namespace BackupDatabaseSampleApp.Classes;
+namespace BackupLibrary.Classes;
 
 public sealed class BackupSettings
 {
@@ -23,8 +23,12 @@ public sealed class BackupSettings
     {
         var configuration = Configuration.JsonRoot();
         var appSettings = configuration.GetRequiredSection(AppSettings.Location).Get<AppSettings>();
-        BaseFileName = appSettings.BaseFileName;
+        BaseFileName = appSettings!.BaseFileName;
         BaseExtensions = appSettings.BaseExtensions;
         ConnectionString = appSettings.ConnectionString;
+
     }
+
+    public override string ToString() => BaseFileName;
+
 }

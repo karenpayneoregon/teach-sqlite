@@ -10,7 +10,7 @@ internal class SqlStatements
     /// </summary>
     public static string GetContactsWithOfficePhone =>
         """
-        SELECT  c.ContactId,
+        SELECT c.ContactId,
                ct.ContactTitle,
                c.FirstName,
                c.LastName,

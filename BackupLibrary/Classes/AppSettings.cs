@@ -1,4 +1,8 @@
-﻿namespace BackupDatabaseSampleApp.Classes;
+﻿using BackupDatabaseSampleApp.Classes;
+
+#nullable disable
+
+namespace BackupLibrary.Classes;
 
 /// <summary>
 /// Settings for generating files read from appsettings.json see <see cref="BackupSettings"/> for retrieval of settings.

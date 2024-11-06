@@ -72,11 +72,11 @@ namespace BindingListViewCore
         public T Object
         {
             get { return _object; }
-            private set
+            set
             {
                 if (value == null)
                 {
-                    throw new ArgumentNullException("Object", "Object cannot be null.");
+                    throw new ArgumentNullException(nameof(Object), "Object cannot be null.");
                 }
                 _object = value;
             }
