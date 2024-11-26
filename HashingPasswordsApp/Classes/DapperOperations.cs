@@ -22,6 +22,7 @@ internal class DapperOperations
             VALUES (@UserName, @UserPassword);
             SELECT last_insert_rowid();
             """;
+
         using var cn = new SQLiteConnection(ConnectionString());
         clients.Id = cn.ExecuteScalar(addStatement,clients).GetId();
 
@@ -35,6 +36,7 @@ internal class DapperOperations
         var client = cn.QueryFirstOrDefault<Clients>(selectStatement);
 
         var verified = BC.Verify("MyPassword", client.UserPassword);
+
         if (verified)
         {
             AnsiConsole.MarkupLine("[bold green]Password verified[/]");
