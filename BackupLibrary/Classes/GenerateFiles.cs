@@ -91,6 +91,17 @@ namespace BackupLibrary.Classes
 
             return string.Format(pattern, max);
         }
+
+        /// <summary>
+        /// Creates a new file with a unique name in the designated backup folder.
+        /// </summary>
+        /// <returns>
+        /// A tuple containing a boolean indicating success and the name of the created file.
+        /// If the operation fails, the boolean will be <c>false</c> and the file name will be <c>null</c>.
+        /// </returns>
+        /// <remarks>
+        /// The file is created with an empty content, and the file name is generated using <see cref="NextFileName"/>.
+        /// </remarks>
         public static (bool success, string fileName) CreateFile()
         {
             try
@@ -112,9 +123,14 @@ namespace BackupLibrary.Classes
         public static string GetNumbers(string input)
             => new(input.Where(char.IsDigit).ToArray());
 
+
         /// <summary>
-        /// Get all files
+        /// Gets an array of file paths that match the base file name and extension pattern in the main assembly location.
         /// </summary>
+        /// <remarks>
+        /// The file paths are retrieved from the directory specified by the base directory of the current application domain.
+        /// The file names must match the pattern defined by the base file name and extension in <see cref="BackupSettings"/>.
+        /// </remarks>
         private static string[] Files
             => Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory,
                 $"{BackupSettings.Instance.BaseFileName}*.{BackupSettings.Instance.BaseExtensions}");
@@ -142,8 +158,12 @@ namespace BackupLibrary.Classes
         public static bool HasAnyFiles() => Files.Length > 0;
 
         /// <summary>
-        /// Remove all files
+        /// Deletes all files in the backup folder that match the naming pattern defined by <see cref="BackupSettings"/>.
         /// </summary>
+        /// <remarks>
+        /// This method checks if there are any files present before attempting to delete them.
+        /// If no files are found, the method exits without performing any operations.
+        /// </remarks>
         public static void RemoveAllFiles()
         {
             if (!HasAnyFiles()) return;

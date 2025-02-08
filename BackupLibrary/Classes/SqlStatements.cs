@@ -1,4 +1,4 @@
-﻿namespace BackupDatabaseSampleApp.Classes;
+﻿namespace BackupLibrary.Classes;
 
 /// <summary>
 /// SQL Statements for this application

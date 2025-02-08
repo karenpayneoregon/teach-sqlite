@@ -3,6 +3,11 @@ using Microsoft.Extensions.Configuration;
 
 namespace BackupLibrary.Classes;
 
+/// <summary>
+/// Represents the settings required for backup operations, including file names, extensions, 
+/// and database connection strings. This class provides a singleton instance for accessing 
+/// these settings, which are initialized from a configuration file.
+/// </summary>
 public sealed class BackupSettings
 {
     private static readonly Lazy<BackupSettings> Lazy = new(() => new BackupSettings());
