@@ -24,8 +24,7 @@ public class BindingListView<T> : BindingList<T>, IBindingListView, IRaiseItemCh
 
     protected override bool SupportsSearchingCore => true;
 
-    protected override int FindCore(PropertyDescriptor property,
-    object key)
+    protected override int FindCore(PropertyDescriptor property, object key)
     {
         // Simple iteration:
         for (int index = 0; index < Count; index++)
