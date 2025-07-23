@@ -136,9 +136,15 @@ namespace BackupDatabaseSampleApp.Classes
         }
 
         /// <summary>
-        /// Determine if there are any files
+        /// Determines whether any backup files exist in the designated directory.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// <c>true</c> if there are any backup files present; otherwise, <c>false</c>.
+        /// </returns>
+        /// <remarks>
+        /// This method checks for files matching the naming pattern defined by
+        /// <see cref="BackupSettings"/> in the application's configuration.
+        /// </remarks>
         public static bool HasAnyFiles() => Files.Length > 0;
 
         /// <summary>

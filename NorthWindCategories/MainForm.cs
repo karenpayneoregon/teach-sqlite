@@ -12,7 +12,9 @@ public partial class MainForm : Form
         InitializeComponent();
 
         _bindingSource.DataSource = DataOperations.Read();
+
         dataGridView1.DataSource = _bindingSource;
+        dataGridView1.ExpandColumns();
     }
 
     /// <summary>
@@ -25,15 +27,22 @@ public partial class MainForm : Form
     private void InsertImageButton_Click(object sender, EventArgs e)
     {
         var text = Path.GetFileNameWithoutExtension("blub.png");
-        var (success, exception) = DataOperations.Insert("blub.png");
+        
+        var (success, exception) = DataOperations.InsertRecord("blub.png");
+
         if (success)
         {
-            var dt = (DataTable)_bindingSource.DataSource;
+
+            var dt = _bindingSource.DataTable();
+
             var row = dt.NewRow();
             row["CategoryName"] = text;
             row["Description"] = text;
             row["Picture"] = File.ReadAllBytes("blub.png");
             dt.Rows.Add(row);
+
+            _bindingSource.MoveLast();
+
         }
         else
         {

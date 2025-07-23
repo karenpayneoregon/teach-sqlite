@@ -37,13 +37,6 @@ internal class DapperOperations
 
         var verified = BC.Verify("MyPassword", client.UserPassword);
 
-        if (verified)
-        {
-            AnsiConsole.MarkupLine("[bold green]Password verified[/]");
-        }
-        else
-        {
-            AnsiConsole.MarkupLine("[bold red]Password not verified[/]");
-        }
+        AnsiConsole.MarkupLine(verified ? "[bold green]Password verified[/]" : "[bold red]Password not verified[/]");
     }
 }
